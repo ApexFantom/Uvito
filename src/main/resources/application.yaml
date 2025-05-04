@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/Uvito
+    url: jdbc:postgresql://db:5432/Uvito
     username: postgres
     password: 3311
     driver-class-name: org.postgresql.Driver

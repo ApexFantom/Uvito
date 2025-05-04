@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: uvito_db
+    restart: always
+    environment:
+      POSTGRES_DB: Uvito
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 3311
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - uvito-net  # Подключаем db к сети
+
+  app:
+    build: .
+    container_name: uvito_app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/Uvito
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 3311
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    networks:
+      - uvito-net  # Подключаем app к сети
+
+volumes:
+  db_data:
+
+networks:
+  uvito-net:
+    driver: bridge  # Указание драйвера сети, если нужно
