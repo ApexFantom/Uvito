@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/Uvito
-    username: postgres
-    password: 3311
+    url: jdbc:postgresql://dpg-d0be7915pdvs73cjehlg-a.frankfurt-postgres.render.com:5432/uvitodb
+    username: postgresvito
+    password: HyC09SxxbSHCNzAHDBWWJLWiOGSnSMCd
     driver-class-name: org.postgresql.Driver
   thymeleaf:
     enabled: true
