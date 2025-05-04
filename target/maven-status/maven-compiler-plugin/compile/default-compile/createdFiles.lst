@@ -5,6 +5,7 @@ com\Uvito\Uvito\repository\UselessItemsRepository.class
 com\Uvito\Uvito\JwtFilter.class
 com\Uvito\Uvito\service\UselessItemsService.class
 SQLiteRead.class
+com\Uvito\Uvito\controller\ImageController.class
 com\Uvito\Uvito\controller\AuthController$AuthResponse.class
 com\Uvito\Uvito\models\UselessItems.class
 com\Uvito\Uvito\service\UsersService.class

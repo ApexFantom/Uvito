@@ -4,6 +4,17 @@
 }
 @media only screen and (max-width: 960px) {
   /* styles for mobile browsers smaller than 480px; (iPhone) */
+     .header{
+     height: 128px;
+     }
+     #Uvito{
+     margin-left: 20px;
+     }
+     #headerUl{
+     padding-left: 0%;
+     margin-left: -55px;
+     margin-top: 60px;
+     }
 }
 @media only screen and (min-width: 1440px) {
   /* styles for browsers larger than 1440px; */
@@ -19,18 +30,6 @@
 
 @media only screen and (device-width: 768px) {
   /* default iPad screens */
-   .header{
-   height: 128px;
-   }
-   #Uvito{
-   margin-left: 20px;
-   }
-   .headerul{
-   padding-left: 0%;
-   margin-left: -55px;
-   margin-top: 60px;
-   }
-
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {

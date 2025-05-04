@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-d0be7915pdvs73cjehlg-a.frankfurt-postgres.render.com:5432/uvitodb
-    username: postgresvito
-    password: HyC09SxxbSHCNzAHDBWWJLWiOGSnSMCd
+    url: jdbc:postgresql://127.0.0.1:5432/Uvito
+    username: postgres
+    password: 3311
     driver-class-name: org.postgresql.Driver
   thymeleaf:
     enabled: true
@@ -14,9 +14,10 @@ spring:
       enabled: true
       max-file-size: 5MB
       max-request-size: 5MB
-      location: F:\Downloads\Study\Uvito\src\main\resources\static
-  resources:
-    static-locations: classpath:/static/
+      location: ./uploads/images/
+  web:
+    resources:
+      static-locations: classpath:/static/, file:./uploads/
   jpa:
     hibernate:
       ddl-auto: update

@@ -1,5 +1,7 @@
 package com.Uvito.Uvito.Impl;
-
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.File;
 import com.Uvito.Uvito.models.UselessItems;
 import com.Uvito.Uvito.repository.UselessItemsRepository;
 import com.Uvito.Uvito.service.UselessItemsService;
@@ -54,12 +56,27 @@ public class UselessItemsImpl implements UselessItemsService {
     @Override
     public String saveImage(MultipartFile file) {
         try {
-            // Пример сохранения файла на сервере, адаптируйте путь к своему проекту
+            // Получаем имя файла
             String fileName = file.getOriginalFilename();
-            String filePath = "uploads/images/" + fileName;
-            file.transferTo(new java.io.File(filePath));
 
-            return filePath; // Возвращаем путь к файлу или URL
+            // Определяем путь к папке внутри проекта (относительно корня проекта)
+            Path uploadPath = Paths.get(System.getProperty("user.dir"), "uploads", "images");
+
+            // Создаем папки, если они не существуют
+            File directory = uploadPath.toFile();
+            if (!directory.exists()) {
+                directory.mkdirs();  // Создаем папки, если их нет
+            }
+
+            // Путь для сохранения файла
+            File destinationFile = new File(uploadPath.toFile(), fileName);
+
+            // Сохраняем файл на диск
+            file.transferTo(destinationFile);
+
+            // Возвращаем путь к файлу (можно также возвращать URL, если нужно)
+            return "/uploads/images/" + fileName;  // Возвращаем абсолютный путь или относительный
+
         } catch (IOException e) {
             e.printStackTrace();
             return null; // Возвращаем null в случае ошибки

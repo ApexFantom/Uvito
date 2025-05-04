@@ -28,11 +28,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/login", "/register", "/").permitAll()
-                        .requestMatchers("/scripts/**", "/styles/**", "/images/**", "/uploads/images/**").permitAll()
+                        .requestMatchers("/scripts/**", "/styles/**", "/images/**").permitAll()
+                        .requestMatchers("/uploads/images/**").permitAll()  // это правило уже есть
+                        .requestMatchers(HttpMethod.GET, "/uploads/images/**").permitAll()  // явно разрешаем GET запросы на изображения
                         .requestMatchers(HttpMethod.GET, "/api/useless-items/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/useless-items/**").authenticated() // POST только авторизованным
                         .requestMatchers(HttpMethod.PUT, "/api/useless-items/**").authenticated() // PUT только авторизованным
-                        .requestMatchers(HttpMethod.DELETE, "/api/useless-items/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
@@ -45,6 +46,17 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+//    @Bean
+//    public CorsFilter corsFilter() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(true);
+//        config.addAllowedOrigin("*"); // Разрешаем все источники
+//        config.addAllowedHeader("*");
+//        config.addAllowedMethod("*"); // Разрешаем все методы
+//        source.registerCorsConfiguration("/**", config);
+//        return new CorsFilter(source);
+//    }
 }
 
 
