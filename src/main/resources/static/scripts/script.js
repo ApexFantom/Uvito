@@ -180,12 +180,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    document.querySelector('#LogoutButton').addEventListener('pointerup', async () => {
+    document.querySelector('#LogoutButton').addEventListener('click', async () => {
         await logout();
         document.getElementById('USERNAME').textContent = '';
     });
 
-    document.querySelector('#LoginButton').addEventListener('pointerup', async () => {
+    document.querySelector('#LoginButton').addEventListener('click', async () => {
         const email = document.querySelector('#emailL').value;
         const password = document.querySelector('#passwordL').value;
         const success = await login(email, password);
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    document.querySelector('#RegisterButton').addEventListener('pointerup', async () => {
+    document.querySelector('#RegisterButton').addEventListener('click', async () => {
         const username = document.querySelector('#usernameR').value;
         const email = document.querySelector('#emailR').value;
         const password = document.querySelector('#passwordR').value;
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                  document.getElementById('reg-blank-login').style.display = 'none';
                  }
     });
-    document.getElementById('CreateButton').addEventListener('pointerup', async () => {
+    document.getElementById('CreateButton').addEventListener('click', async () => {
         const name = document.querySelector('#name').value;
         const description = document.querySelector('#des').value;
         const image = document.querySelector('#img').files[0];
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             FetchCatalog();
         }
     });
-    document.getElementById('UpdateButton').addEventListener('pointerup', async () => {
+    document.getElementById('UpdateButton').addEventListener('click', async () => {
             const name = document.querySelector('#name').value;
             const numberId = document.querySelector('#item-name').getAttribute('numberid');
             const description = document.querySelector('#des').value;
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 FetchCatalog();
             }
         });
-        document.getElementById('DeleteButton').addEventListener('pointerup', async () => {
+        document.getElementById('DeleteButton').addEventListener('click', async () => {
                     const numberId = document.querySelector('#item-name').getAttribute('numberid');
                     const success = await deleteItem(numberId);
                     if (success) {
