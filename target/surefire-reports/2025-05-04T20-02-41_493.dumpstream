@@ -1,4 +1,4 @@
-# Created at 2025-05-04T19:45:19.970
+# Created at 2025-05-04T20:02:41.716
 Boot Manifest-JAR contains absolute paths in classpath 'D:\TempleNet\WorkSpace\JAVA\Uvito\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root
