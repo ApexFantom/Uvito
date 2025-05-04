@@ -19,7 +19,7 @@ spring:
     static-locations: classpath:/static/
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     database: POSTGRESQL
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
