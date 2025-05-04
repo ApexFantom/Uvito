@@ -77,3 +77,13 @@ text-wrap: wrap;
 display: block;
 background-image: url('https://img.freepik.com/free-vector/topographic-contour-lines-map-seamless-pattern_1284-52862.jpg?t=st=1686950979~exp=1686951579~hmac=2c9c70a24bea4d4196297c64e44526ceda26ce5d09203cd56a6cb02e5736bd5e');
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Начальное положение сдвига */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px); /* Конечное положение сдвига */
+  }
+}
