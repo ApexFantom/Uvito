@@ -192,6 +192,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (success) {
             document.getElementById('reg-blank-login').style.display = 'none';
             document.getElementById('USERNAME').textContent = email;
+        } else {
+        document.getElementById('reg-blank-login').style.display = 'none';
         }
     });
 
@@ -204,7 +206,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             await login(email, password)
             document.getElementById('reg-blank-register').style.display = 'none';
             document.getElementById('USERNAME').textContent = email;
-        }
+        } else {
+                 document.getElementById('reg-blank-login').style.display = 'none';
+                 }
     });
     document.getElementById('CreateButton').addEventListener('pointerup', async () => {
         const name = document.querySelector('#name').value;
