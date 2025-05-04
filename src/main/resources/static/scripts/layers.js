@@ -1,7 +1,13 @@
+function makeLayer(blank, display='flex', ...args) {
+  if (!document.getElementById(blank)) {
+    return 0;
+  }
+  var blankLayer = document.getElementById(blank);
+
 for (let btn of args) {
   const button = document.getElementById(btn);
   if (button) {
-    const toggleLayer = () => {
+    const handler = () => {
       if (blankLayer.style.display === 'none') {
         blankLayer.style.display = display;
         blankLayer.style.zIndex = 10;
@@ -20,7 +26,9 @@ for (let btn of args) {
       }
     };
 
-    button.addEventListener('click', toggleLayer);
-    button.addEventListener('touchstart', toggleLayer);
+    // Назначение и для клика, и для касания
+    button.onclick = handler;
+    button.ontouchstart = handler;
   }
+}
 }
