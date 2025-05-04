@@ -1,0 +1,303 @@
+.blank-global-container{
+height:max-content;
+min-height: 100vh;
+width: 100%;
+
+top: 0;
+left: 0;
+position: fixed;
+justify-content: center; /*Центрирование по горизонтали*/
+align-items: center;
+z-index: 1;
+top: 0;
+display: flex;
+}
+.wrapper-blank{
+margin: auto;
+width: 450px;
+height: auto;
+background-color: white;
+backdrop-filter: url(filters.svg#filter) blur(4px) saturate(50%) brightness(90%);
+background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+background-size: cover;
+border-radius: 15px;
+}
+.wrapper-blank h1 {
+    color: #555555;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.wrapper-blank p {
+    color: #838383;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.wrapper-blank a:hover {
+    text-decoration: underline;
+
+}
+.wrapper-blank {
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 20px;
+    font-size: 15px;
+}
+.wrapper-blank label {
+    color: #555555;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.wrapper-blank input {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 8px;
+    width: 94%;
+    margin-bottom: 15px;
+}
+.btn {
+    margin-top: 20px;
+    background-color: #af9c58;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    transition: 0.3s;
+}
+.white{
+background-color: #ffffff00;
+}
+.btn:hover {
+    background-color: #e8b266;
+}
+
+.file-drop-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 25px;
+  border: 1px dashed rgb(14 32 30);
+  border-radius: 15px;
+  transition: 0.2s;
+  file-drop-area.is-active {
+        background-color: rgb(163 163 163 / 47%);
+  }
+
+}
+
+.fake-btn {
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid black;
+  background-color: rgba(245 245 245);
+  padding: 8px 15px;
+  margin-right: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.file-msg {
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
+
+.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  file-drop-area:focus {
+    outline: none;
+  }
+}
+.file-drop-area{
+    margin-top: 20px;
+}
+.courses-base {
+    display: flex;
+    justify-content: center;
+}
+
+.courses-list-wrapper {
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #af9c58;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+td{
+text-align: center;
+
+}
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.past-lesson {
+    color: #9d9d9d;
+}
+
+.current-lesson {
+    color: orange;
+    font-weight: bold;
+}
+
+.future-lesson {
+    color: black;
+}
+.courses-unit-a-management{
+margin-bottom: 3px;
+font-size: 15px;
+position: absolute;
+    right: 0;
+    top: -20px;
+}
+.courses-unit-a-management button{
+    background-color: #ff8c0000;
+}
+.edit-profile-button {
+display: inline-block;
+padding: 10px 20px;
+background-color: rgba(255, 165, 0, 0.5);
+color: black;
+text-decoration: none;
+border-radius: 4px;
+transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+background-color: #ddd;
+}
+.form-prefix{
+font-size: 0px;
+}
+.form-prefix label{
+font-size: 15px;
+}
+.date-unit-wrapper{
+background-color: white;
+border-radius: 10px;
+box-shadow: 0px 0.6rem 0.6rem rgba(0,0,0,0.1) !important;
+margin: 30px 20px 0px 20px;
+width: 260px;
+}
+.date-unit-wrapper a:hover {
+    text-decoration: underline;
+    }
+.date-unit-wrapper{
+font-size: 20px;
+background-color: white;
+border-radius: 5px;
+box-shadow: 0px 0.6rem 0.6rem rgba(0,0,0,0.1) !important;
+margin: 30px 20px 0px 20px;
+width: 260px;
+padding: 15px;
+color: #ffa300;
+height: max-content;
+border: 1px solid;
+min-height: 320px;
+max-height: max-content;
+}
+.date-unit-lesson{
+border-top: 1px solid #a7a7a7;
+}
+.date-unit-wrapper h2{
+font-size: 15px;
+overflow-wrap: anywhere;
+margin: 15px;
+color: #747474;
+}
+.date-unit-lesson h5{
+font-size: 15px;
+margin: 10px;
+color: black;
+}
+.personal-calendar-align{
+ backdrop-filter: invert(70%);
+ display: flex;
+ position: relative;
+ left: 0;
+ width: calc(100% - 480px);
+ height: max-content;
+ justify-content: center;
+}
+.personal-calendar{
+    width: 500px;
+    margin: 30px;
+    padding: 20px;
+    color: white;
+    background: #00000066;
+    border-radius: 20px;
+}
+.personal-calendar tr{
+}
+.personal-calendar td{
+    border: none;
+    border-radius: 20px;
+}
+.personal-calendar th{
+    background-color: #ffffff00;
+    border: none;
+}
+#calendar2 {
+  width: 100%;
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+}
+#calendar thead tr:last-child {
+  font-size: small;
+  color: #b9b9b9;
+}
+#calendar thead tr:nth-child(1) td:nth-child(2) {
+  color: #ffb100;
+}
+#calendar thead tr:nth-child(1) td:nth-child(1):hover, #calendar thead tr:nth-child(1) td:nth-child(3):hover {
+  cursor: pointer;
+}
+#calendar tbody td {
+  color: #dddddd;
+}
+#calendar tbody td:nth-child(n+6), #calendar .holiday {
+  color: #dddddd;
+}
+#calendar tbody td.today {
+  color: #ffb100;
+}

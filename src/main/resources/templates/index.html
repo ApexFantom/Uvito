@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Useless Items</title>
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
+</head>
+<body>
+<header class="header" id="header">
+    <span id="Uvito"><b style="text-decoration: none;color: #af9c58;font-size:50px"> U</b> <b style="text-decoration: none;font-size:40px">vito</b>    ...реализация бесполезного - бесценно  </span>
+    <ul id="headerUl">
+        <li id="LOGIN">Авторизация</li>
+        <li id="REG">Регистрация</li>
+        <li id="USERNAME" style="display:none; border: none; color: #af9c58;"></li>
+        <li id="LOGOUT" style="display: none;">Выйти</li>
+        <li id="CREATE" style="display: none;">Продать</li>
+    </ul>
+</header>
+
+
+    <div class="items-list-wrapper jc-c">
+        <div class="items-list-align" id="items-list-align">
+        </div>
+    </div>
+
+
+<div class="blank-global-container" id="item-blank"  data-action="item" style="display: none; backdrop-filter: blur(4px) saturate(150%) brightness(60%);">
+    <div class="wrapper-blank" id="modal-content">
+        <div class="close-btn" id="wrapper-blank-close-btn-item">⨯</div>
+
+        </div>
+    </div>
+</div>
+
+<div class="blank-global-container" id="create-blank"  data-action="item" style="display: none; backdrop-filter: blur(4px) saturate(150%) brightness(60%);">
+    <div class="wrapper-blank" id="modal-content">
+        <div class="close-btn" id="wrapper-blank-close-btn-create">⨯</div>
+        <div class="wrapper-blank-form" method="post">
+            <h2 id="create-blank-h">Создать объявление</h2>
+
+            <label for="name" id="item-name">Что продаете?</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="des">Опишите предмет</label>
+            <input type="description" id="des" name="description" required><br>
+
+
+            <div class="file-drop-area" id="img_area">
+            <span class="fake-btn" > Приложите фотографии</span>
+            <span class="file-msg" id="file-msg-icon"><p>...или перетащите</p></span>
+            <input type="file" id="img" name="description" class="file-input" required><br>
+            </div>
+            <div>
+                <input type="submit"  value="Создать" class="btn" id="CreateButton">
+                <input type="submit"  value="Обновить" class="btn" id="UpdateButton" style="disply: none;">
+                <input type="submit"  value="Удалить" class="btn" id="DELETE" style="disply: none;">
+            </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="blank-global-container" id="delete-blank"  data-action="logout" style="display: none; backdrop-filter: blur(4px) saturate(150%) brightness(60%);">
+    <div class="wrapper-blank">
+        <div class="close-btn" id="wrapper-blank-close-btn-delete">⨯</div>
+        <div class="wrapper-blank-form" method="post">
+            <h2>Удаление объявления</h2>
+            <div><p>Уверены, что хотите удалить?</p></div>
+
+            <div>
+                <input type="submit"  value="Да, сносим" class="btn" id="DeleteButton">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div sec:authorize="isAnonymous()">-->
+
+    <div class="blank-global-container" id="reg-blank-login"  data-action="login" style="display: none; backdrop-filter: blur(4px) saturate(150%) brightness(60%); {{ request.GET.style }}">
+        <div class="wrapper-blank">
+            <div class="close-btn" id="wrapper-blank-close-btn-login">⨯</div>
+            <div class="wrapper-blank-form" method="post">
+        <h2>Авторизация</h2>
+
+            <label for="emailL" id="email">Почтовый адрес email</label>
+            <input type="text" id="emailL" name="emailL" required><br>
+
+            <label for="passwordL">Пароль</label>
+            <input type="passwordL" id="passwordL" name="passwordL" required><br>
+
+                <div>
+                    <input type="submit"  value="Логин" class="btn" id="LoginButton">
+                </div>
+    </div>
+</div>
+</div>
+
+
+
+
+    <div class="blank-global-container" id="reg-blank-register"  data-action="register" style="display: none; backdrop-filter: blur(4px) saturate(150%) brightness(60%); {{ request.GET.style }}">
+        <div class="wrapper-blank">
+            <div class="close-btn" id="wrapper-blank-close-btn-reg">⨯</div>
+            <div class="wrapper-blank-form" method="post">
+        <h2>Регистраци</h2>
+
+            <label for="usernameR">Придумайте никнейм</label>
+            <input type="text" id="usernameR" name="usernameR" required><br>
+
+            <label for="emailR">Почтовый адрес email</label>
+            <input type="emailR" id="emailR" name="emailR" required><br>
+
+            <label for="passwordR">Придумайте пароль</label>
+            <input type="passwordR" id="passwordR" name="passwordR" required><br>
+
+                <div>
+                    <input type="submit"  value="Регистрация" class="btn" id="RegisterButton">
+                </div>
+            </div>
+        </div>
+            </div>
+
+
+
+<div class="blank-global-container" id="reg-blank-logout"  data-action="logout" style="display: none; backdrop-filter: blur(4px) saturate(150%) brightness(60%);">
+    <div class="wrapper-blank">
+        <div class="close-btn" id="wrapper-blank-close-btn-logout">⨯</div>
+        <div class="wrapper-blank-form" method="post">
+            <h2>Выход из аккаунта</h2>
+            <div><p>Уверены, что хотите выйти?</p></div>
+
+            <div>
+                <input type="submit"  value="Логаут" class="btn" id="LogoutButton">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/scripts/layers.js}"></script>
+<script th:src="@{/scripts/script.js}"></script>
+<script th:src="@{/scripts/catalog.js}"></script>
+<script th:src="@{/scripts/inputImage.js}"></script>
+
+<script>
+
+</script>
+</body>
+</html>
